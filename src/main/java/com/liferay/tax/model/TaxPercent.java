@@ -1,4 +1,4 @@
-package com.liferay.model;
+package com.liferay.tax.model;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,13 +1,13 @@
-package com.liferay.util;
+package com.liferay.tax.util;
 
-import com.liferay.model.Goods;
-import com.liferay.model.KindMap;
-import com.liferay.model.TaxPercent;
+import com.liferay.tax.model.Goods;
+import com.liferay.tax.model.KindMap;
+import com.liferay.tax.model.TaxPercent;
 
 import java.math.BigDecimal;
 
-import static com.liferay.util.TaxCount.basicTax;
-import static com.liferay.util.TaxCount.importedTax;
+import static com.liferay.tax.util.TaxCount.basicTax;
+import static com.liferay.tax.util.TaxCount.importedTax;
 
 /**
  * Created by lenovo on 2017-03-28.

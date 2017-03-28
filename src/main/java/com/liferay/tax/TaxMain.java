@@ -1,11 +1,14 @@
 package com.liferay.tax;
 
-import com.liferay.model.Goods;
-import com.liferay.model.GoodsList;
+
+import com.liferay.tax.model.Goods;
+import com.liferay.tax.model.GoodsList;
+import com.liferay.tax.util.GoodsGenerate;
+
 import java.math.RoundingMode;
 import java.util.Scanner;
 
-import static com.liferay.util.GoodsGenerate.goodsObj;
+
 
 /**
  * Created by lenovo on 2017-03-27.
@@ -24,7 +27,7 @@ public class TaxMain {
                 break;
             }else {
                 count++;
-                Goods goods= goodsObj(input);
+                Goods goods= GoodsGenerate.goodsObj(input);
                 //遍历拆分成Goods对象
                 //放入goodsMap
                 goodsList.addGoods(count,goods);
