@@ -1,14 +1,47 @@
 package com.liferay.tax;
 
 import com.liferay.model.Goods;
+import com.liferay.model.GoodsList;
+import java.math.RoundingMode;
+import java.util.Scanner;
 
-import java.util.HashMap;
-import java.util.Map;
+import static com.liferay.util.GoodsGenerate.goodsObj;
 
 /**
  * Created by lenovo on 2017-03-27.
  */
 public class TaxMain {
+    public static void main(String [] args){
+        System.out.println("Input:");
+        GoodsList goodsList=new GoodsList();
+        Scanner scanner=new Scanner(System.in);
+        boolean flag=true;
+        int count=0;
+        do {
+            String input=scanner.nextLine().trim();
+
+            if (input.equals("")||input==null) {
+                break;
+            }else {
+                count++;
+                Goods goods= goodsObj(input);
+                //遍历拆分成Goods对象
+                //放入goodsMap
+                goodsList.addGoods(count,goods);
+                goodsList.setTaxNum(goodsList.getTaxNum().add(goods.getTaxPaid()));
+                goodsList.setPriceNum(goodsList.getPriceNum().add(goods.getAfterTaxPrice()));
+            }
+        } while (true);
+
+        System.out.println("=============================");
+        System.out.println("Output:");
+        for (Goods goods: goodsList.getGoodsMap().values()) {
+            System.out.println(goods.getPrintName()+goods.getAfterTaxPrice().setScale(2, RoundingMode.HALF_EVEN));
+        }
+        System.out.println("TAX:"+goodsList.getTaxNum().setScale(2,RoundingMode.HALF_EVEN));
+        System.out.println("TOTAL:"+goodsList.getPriceNum().setScale(2,RoundingMode.HALF_EVEN));
+    }
+
     /*CODING PROBLEM: TAX
 
                 * Basic tax is applied at a rate of 10% on all goods except food and medical
@@ -43,12 +76,6 @@ public class TaxMain {
         1 imported box of chocolates at 11.25    1 imported box of chocolates: 11.81
         TAX: 6.66
         TOTAL: 74.64*/
-    public static void main(String [] args){
-        Map<String,Double> taxMap=new HashMap<String,Double>();
-        taxMap.put("notImported",0.05);
-
-        Map<String,Goods> goodsKind=new HashMap<String, Goods>();
 
 
-    }
 }
