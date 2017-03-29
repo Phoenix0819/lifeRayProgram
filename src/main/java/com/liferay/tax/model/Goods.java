@@ -5,7 +5,7 @@ import java.math.BigDecimal;
 /**
  * Created by lenovo on 2017-03-27.
  */
-public class Goods {
+public class Goods implements Items{
     private String name;
     private String printName;
     private BigDecimal beforeTaxPrice;
@@ -21,9 +21,6 @@ public class Goods {
     public void setTaxPercent(BigDecimal taxPercent) {
         this.taxPercent = taxPercent;
     }
-
-
-
 
     public String getPrintName() {
         return printName;
@@ -71,5 +68,9 @@ public class Goods {
 
     public void setKind(String kind) {
         this.kind = kind;
+    }
+
+    public Goods attributeReturn() {
+        return this;
     }
 }

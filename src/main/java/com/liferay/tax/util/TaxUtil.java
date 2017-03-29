@@ -5,12 +5,12 @@ import com.liferay.tax.model.TaxPercent;
 /**
  * Created by lenovo on 2017-03-28.
  */
-public class TaxCount {
-    static double basicTax(String kind) {
+public class TaxUtil {
+    public static double basicTax(String kind) {
         return TaxPercent.getTaxPercentByKind(kind);
     }
 
-    static double importedTax(String[] strs) {
+    public static double importedTax(String[] strs) {
         double importedTax=0.00;
         for (String str:strs) {
             if (str.trim().equals("imported")){

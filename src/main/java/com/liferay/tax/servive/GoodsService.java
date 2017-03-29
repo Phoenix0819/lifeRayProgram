@@ -1,18 +1,16 @@
-package com.liferay.tax.util;
+package com.liferay.tax.servive;
 
 import com.liferay.tax.model.Goods;
 import com.liferay.tax.model.KindMap;
-import com.liferay.tax.model.TaxPercent;
-
 import java.math.BigDecimal;
 
-import static com.liferay.tax.util.TaxCount.basicTax;
-import static com.liferay.tax.util.TaxCount.importedTax;
+import static com.liferay.tax.util.TaxUtil.basicTax;
+import static com.liferay.tax.util.TaxUtil.importedTax;
 
 /**
  * Created by lenovo on 2017-03-28.
  */
-public class GoodsGenerate {
+public class GoodsService {
     public static Goods goodsObj(String input) {
         Goods goods=new Goods();
         String [] strAt=input.split("\\s+at");
@@ -35,15 +33,8 @@ public class GoodsGenerate {
 
     //计算taxPaid
     private static BigDecimal taxPaidCount(Goods goods) {
-        BigDecimal taxPercent=goods.getTaxPercent();
-        BigDecimal taxPaid=taxPercent;
-        taxPaid=taxPaid.multiply(goods.getBeforeTaxPrice());
-        return taxPaid;
-    }
 
-    //得到税点
-    private static double taxPercentByKind(String kind) {
-        return TaxPercent.getTaxPercentByKind(kind);
+        return goods.getTaxPercent().multiply(goods.getBeforeTaxPrice());
     }
 
 }
