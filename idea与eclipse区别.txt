@@ -1,0 +1,26 @@
+idea有免费版和收费版，我用的免费版
+eclipse免费
+
+1 project & modules
+刚用idea做项目时很困惑，不知道怎么配置相互关联的工程，每次新建另一个工程就开了其他窗口，后来经过查资料，了解到idea的Project是类似于eclipse中的workspace，而Module是类似于eclipse中的project。
+
+2 项目结构不同
+
+3 GIT管理
+idea每个工程一个独立的Git 
+
+4 默认配置不同，快捷键不同，也可以设置成一样的。
+代码窗口中分开的时候，eclipse可以拖拽，idea不能
+
+5 喜欢idea的调试
+Eclipse需要在debug和java窗口转换，idea不需要
+
+6 新建类
+eclipse在新建类的时候询问实现什么接口或者继承什么父类，在新建类时直接生成必要代码
+idea不询问，不生成其他信息。新建类之后在类中再添加。
+
+7 Web开发
+免费版idea不支持Web前端开发的提示和辅助。eclipse可用插件来增强这个功能。
+
+8 电脑配置
+低配置电脑中使用idea更卡更慢
