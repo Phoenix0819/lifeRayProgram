@@ -1,10 +1,10 @@
-package com.liferay.tax.model;
+package com.liferay.taxCount.pojo;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- * Created by lenovo on 2017-03-28.
+ * Created by lenovo on 2017-03-29.
  */
 public class TaxPercent {
     private static final Map<String,Double> taxPercent;
@@ -19,6 +19,5 @@ public class TaxPercent {
     public static double getTaxPercentByKind(String kind){
         return taxPercent.get(kind);
     }
-
 
 }

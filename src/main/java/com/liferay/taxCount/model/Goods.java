@@ -1,11 +1,11 @@
-package com.liferay.tax.model;
+package com.liferay.taxCount.model;
 
 import java.math.BigDecimal;
 
 /**
  * Created by lenovo on 2017-03-27.
  */
-public class Goods implements Items{
+public abstract class Goods{
     private String name;
     private String printName;
     private BigDecimal beforeTaxPrice;
@@ -70,7 +70,5 @@ public class Goods implements Items{
         this.kind = kind;
     }
 
-    public Goods attributeReturn() {
-        return this;
-    }
+    public abstract void printGoods();
 }

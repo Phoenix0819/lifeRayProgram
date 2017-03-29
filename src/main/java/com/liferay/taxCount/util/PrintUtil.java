@@ -1,7 +1,8 @@
-package com.liferay.tax.util;
+package com.liferay.taxCount.util;
 
-import com.liferay.tax.model.Goods;
-import com.liferay.tax.model.GoodsList;
+
+import com.liferay.taxCount.model.Goods;
+import com.liferay.taxCount.pojo.GoodsList;
 
 import java.math.RoundingMode;
 
@@ -13,7 +14,7 @@ public class PrintUtil {
         System.out.println("=============================");
         System.out.println("Output:");
         for (Goods goods: goodsList.getGoodsMap().values()) {
-            System.out.println(goods.getPrintName()+goods.getAfterTaxPrice().setScale(2, RoundingMode.HALF_EVEN));
+           goods.printGoods();
         }
         System.out.println("TAX:"+goodsList.getTaxNum().setScale(2,RoundingMode.HALF_EVEN));
         System.out.println("TOTAL:"+goodsList.getPriceNum().setScale(2,RoundingMode.HALF_EVEN));

@@ -1,4 +1,4 @@
-package com.liferay.tax.model;
+package com.liferay.taxCount.pojo;
 
 import java.util.HashMap;
 import java.util.Map;

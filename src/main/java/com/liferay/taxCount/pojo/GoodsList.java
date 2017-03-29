@@ -1,4 +1,7 @@
-package com.liferay.tax.model;
+package com.liferay.taxCount.pojo;
+
+
+import com.liferay.taxCount.model.Goods;
 
 import java.math.BigDecimal;
 import java.util.HashMap;

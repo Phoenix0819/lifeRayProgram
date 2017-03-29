@@ -1,6 +1,6 @@
-package com.liferay.tax.util;
+package com.liferay.taxCount.util;
 
-import com.liferay.tax.model.TaxPercent;
+import com.liferay.taxCount.pojo.TaxPercent;
 
 /**
  * Created by lenovo on 2017-03-28.

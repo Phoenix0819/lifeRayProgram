@@ -1,42 +1,13 @@
-package com.liferay.tax;
-
-
-import com.liferay.tax.factory.GoodsFactory;
-import com.liferay.tax.model.Goods;
-import com.liferay.tax.model.GoodsList;
-import com.liferay.tax.model.Items;
-import com.liferay.tax.util.PrintUtil;
-
-import java.util.Scanner;
+package com.liferay.taxCount;
+import com.liferay.taxCount.service.GoodsService;
+import com.liferay.taxCount.util.PrintUtil;
 
 /**
  * Created by lenovo on 2017-03-27.
  */
 public class TaxMain {
     public static void main(String [] args){
-        System.out.println("Input:");
-        GoodsList goodsList=new GoodsList();
-        Scanner scanner=new Scanner(System.in);
-        int count=0;
-        do {
-            String input=scanner.nextLine().trim();
-
-            if (input.equals("")||input==null) {
-                break;
-            }else {
-                count++;
-                Items items= GoodsFactory.generateGoods(input);
-               // Goods goods= GoodsGenerate.goodsObj(input);
-                //遍历拆分成Goods对象
-                //放入goodsMap
-                Goods goods= (Goods) items.attributeReturn();
-                goodsList.addGoods(count, goods);
-                goodsList.setTaxNum(goodsList.getTaxNum().add(goods.getTaxPaid()));
-                goodsList.setPriceNum(goodsList.getPriceNum().add(goods.getAfterTaxPrice()));
-            }
-        } while (true);
-
-        PrintUtil.outPrint(goodsList);
+        PrintUtil.outPrint(GoodsService.goodsTaxStart());
     }
 
 
