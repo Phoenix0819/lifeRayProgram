@@ -10,7 +10,7 @@ public class KindMap {
     private static final Map<String,String> kindMap;
 
     static {
-        kindMap=new HashMap<String,String>();
+        kindMap=new HashMap<>();
         kindMap.put("book","basic");
         kindMap.put("CD","basic");
         kindMap.put("bar","food");

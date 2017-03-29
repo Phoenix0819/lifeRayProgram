@@ -21,8 +21,7 @@ public class GoodsService {
                 break;
             }else {
                 count++;
-                Goods goods=GoodsFactory.generateGoods(input);// GoodsFactory.generateGoods(input);
-                // Goods goods= GoodsGenerate.goodsObj(input);
+                Goods goods=GoodsFactory.generateGoods(input);
                 //遍历拆分成Goods对象
                 //放入goodsMap
                 goodsList.addGoods(count, goods);

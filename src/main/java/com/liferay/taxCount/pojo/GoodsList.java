@@ -13,7 +13,7 @@ import java.util.Map;
 public class GoodsList {
     private BigDecimal taxNum=BigDecimal.valueOf(0.00);
     private BigDecimal priceNum=BigDecimal.valueOf(0.00);
-    private Map<Integer,Goods> goodsMap=new HashMap<Integer,Goods>();
+    private Map<Integer,Goods> goodsMap=new HashMap<>();
 
     public BigDecimal getTaxNum() {
         return taxNum;

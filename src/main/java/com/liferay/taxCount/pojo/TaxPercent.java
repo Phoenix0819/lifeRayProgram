@@ -9,7 +9,7 @@ import java.util.Map;
 public class TaxPercent {
     private static final Map<String,Double> taxPercent;
     static {
-        taxPercent=new HashMap<String,Double>();
+        taxPercent=new HashMap<>();
         taxPercent.put("basic",0.10);
         taxPercent.put("food",0.00);
         taxPercent.put("medical",0.00);
